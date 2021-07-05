@@ -1,0 +1,49 @@
+A51 MACRO ASSEMBLER  MIKRO_2                                                              05/26/2021 02:44:48 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\mikro_2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE mikro_2.a51 SET(SMALL) DEBUG PRINT(.\Listings\mikro_2.lst) OBJECT(.\Obj
+                      ects\mikro_2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     START: 
+0000 2090FD            2                JB P1.0, START
+0003 B2A0              3                CPL P2.0
+0005 1111              4            ACALL WAIT  
+0007 B2A0              5            CPL P2.0
+0009 B2A1              6            CPL P2.1
+000B 1111              7            ACALL WAIT
+000D B2A1              8            CPL P2.1  
+000F 80EF              9            SJMP START
+                      10     
+0011 7C05             11     WAIT:  MOV R4,#05H
+0013 7B00             12     WAIT1: MOV R3,#00H
+0015 7A00             13     WAIT2: MOV R2,#00H
+0017 DAFE             14     WAIT3: DJNZ R2,WAIT3
+0019 DBFA             15             DJNZ R3,WAIT2
+001B DCF6             16             DJNZ R4,WAIT1
+001D 22               17             RET
+                      18                     END
+A51 MACRO ASSEMBLER  MIKRO_2                                                              05/26/2021 02:44:48 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+START. . . . . . .  C ADDR   0000H   A   
+WAIT . . . . . . .  C ADDR   0011H   A   
+WAIT1. . . . . . .  C ADDR   0013H   A   
+WAIT2. . . . . . .  C ADDR   0015H   A   
+WAIT3. . . . . . .  C ADDR   0017H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

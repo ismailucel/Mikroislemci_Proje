@@ -1,0 +1,18 @@
+START: 
+	   JB P1.0, START
+	   CPL P2.0
+       ACALL WAIT  
+       CPL P2.0
+       CPL P2.1
+       ACALL WAIT
+       CPL P2.1  
+       SJMP START
+
+WAIT:  MOV R4,#05H
+WAIT1: MOV R3,#00H
+WAIT2: MOV R2,#00H
+WAIT3: DJNZ R2,WAIT3
+        DJNZ R3,WAIT2
+        DJNZ R4,WAIT1
+        RET
+		END
